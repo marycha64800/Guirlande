@@ -115,91 +115,91 @@ void blink_white()
 	static unsigned long previous_millis = 0;
 	static int state_pin = LOW;
 	unsigned long current_millis = millis();
-	static int lag = 0;
+	static int scenario = 0;
 
 	if (current_millis - previous_millis >= random_interval() % (INTERVAL_WHITE_LED - random()) + INTERVAL_WHITE_LED)
 	{
-		switch (lag)
+		switch (scenario)
 		{
 		case 0:
 			digitalWrite(LED_WHITE_1, !state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, !state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 1:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, !state_pin);
 			digitalWrite(LED_WHITE_3, !state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 2:
 			digitalWrite(LED_WHITE_1, !state_pin);
 			digitalWrite(LED_WHITE_2, !state_pin);
 			digitalWrite(LED_WHITE_3, !state_pin);
 			digitalWrite(LED_WHITE_4, !state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 3:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 		case 4:
 			digitalWrite(LED_WHITE_1, !state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, !state_pin);
 			digitalWrite(LED_WHITE_4, !state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 5:
 			digitalWrite(LED_WHITE_1, !state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 6:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, !state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 7:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, !state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 8:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, !state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 9:
 			digitalWrite(LED_WHITE_1, state_pin);
 			digitalWrite(LED_WHITE_2, !state_pin);
 			digitalWrite(LED_WHITE_3, state_pin);
 			digitalWrite(LED_WHITE_4, !state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 		case 10:
 			digitalWrite(LED_WHITE_1, !state_pin);
 			digitalWrite(LED_WHITE_2, state_pin);
 			digitalWrite(LED_WHITE_3, !state_pin);
 			digitalWrite(LED_WHITE_4, state_pin);
-			lag = random_interval() % 11;
+			scenario = random_interval() % 11;
 			break;
 
 		default:
-			lag = 0;
+			scenario = 0;
 			break;
 		}
 		previous_millis = current_millis;
